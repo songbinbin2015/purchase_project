@@ -52,7 +52,7 @@
 > 目前为YICMS 1.0版本
 
 ### 1.克隆源码到本地
-> git clone https://github.com/kenuocn/yicms.git
+> git clone https://github.com/songbinbin2015/purchase_project.git
 
 ### 2.进入项目目录
 > cd yicms
@@ -78,5 +78,7 @@
 
 ### 9.链接入口
 > 管理后台：http://yicms.dev/admin/login
+> 前端登录：http://yicms.dev/home/login
+> 前端页面  http://yicms.dev/home
 
 至此, 安装完成 ^_^。
