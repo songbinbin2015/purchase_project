@@ -13,6 +13,7 @@ class IndexsController extends Controller
      */
     public function index()
     {
+      //  echo route('purchases.index');exit;
         return view('admin.indexs.index');
     }
 

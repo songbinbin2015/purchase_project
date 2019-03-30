@@ -52,6 +52,7 @@ class AdminsController extends BaseController
      */
     public function store(AdminRequest $request)
     {
+       // dd($request);exit;
         $this->adminsService->create($request);
 
         flash('添加管理员成功')->success()->important();

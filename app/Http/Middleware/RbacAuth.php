@@ -40,7 +40,8 @@ class RbacAuth
         {
             $this->actionLogsService->mudelActionLogCreate($request);
         }
-
+      //  echo Auth::guard('admin')->user();exit;
+    //    echo \Route::currentRouteName();exit;
         if(!Auth::guard('admin')->user()->hasRule(\Route::currentRouteName()))
         {
             return viewError('你无权访问','index.index');

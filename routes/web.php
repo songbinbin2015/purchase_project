@@ -37,5 +37,15 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function (){
         Route::resource('rules','RulesController',['only'=> ['index','create','store','update','edit','destroy'] ]);  //权限
 
         Route::resource('actions','ActionLogsController',['only'=> ['index','destroy'] ]);  //日志
+
+        Route::resource('purchases','PurchasesController', ['only' => ['index','create', 'store', 'update', 'edit','delete']]);//采购列表
+        Route::get('purchases/status/{status}/{id}','PurchasesController@status')->name('purchases.status');
+        Route::get('purchases/delete/{id}','PurchasesController@delete')->name('purchases.delete');
+        Route::get('purchases/edit/{id}','PurchasesController@edit')->name('purchases.edit');
+        Route::resource('categorys','CategorysController', ['only' => ['index','create', 'store', 'update', 'edit','destroy']]);  //无限极分类列表
     });
 });
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+//Route::any('/rcreate', 'RegisterController@create')->name('RegisterCreate');

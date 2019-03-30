@@ -62,7 +62,6 @@ class AdminsService
         $datas['password'] = Hash::make($request->password);
         $datas['create_ip'] = $request->ip();
         $datas['last_login_ip'] = $request->ip();
-
         $admin = $this->adminsRepository->create($datas);
 
         //插入模型关联数据
