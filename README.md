@@ -9,7 +9,7 @@
 
 ## Laravel-Yicms
 
-基于**Laravel5.5** 开发
+基于**Laravel5.5** 开发111
 
 ## 前言
 基于 [laravel](http://www.laravel.com/)开发.
@@ -52,7 +52,7 @@
 > 目前为YICMS 1.0版本
 
 ### 1.克隆源码到本地
-> git clone https://github.com/songbinbin2015/purchase_project.git
+> git clone https://github.com/kenuocn/yicms.git
 
 ### 2.进入项目目录
 > cd yicms
@@ -78,7 +78,5 @@
 
 ### 9.链接入口
 > 管理后台：http://yicms.dev/admin/login
-> 前端登录：http://yicms.dev/home/login
-> 前端页面  http://yicms.dev/home
 
 至此, 安装完成 ^_^。

@@ -23,7 +23,7 @@ class PurchasesRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $data = [
             'category' => 'required',
             'name'      => 'required|between:1,255',
             'size'     => 'required',
@@ -31,6 +31,10 @@ class PurchasesRequest extends FormRequest
             'texture'     => 'required',
             'image'     => 'required',
         ];
+       if(request()->method == 'PATCH'){
+            unset($data['image']);
+       }
+       return $data;
     }
 
     /**
@@ -38,7 +42,7 @@ class PurchasesRequest extends FormRequest
      */
     public function messages()
     {
-        return [
+        $msg = [
             'category.required'  => '分类必须',
             'name.required'      => '产品名称不能为空',
             'name.between'       => '分类名称长度应该在1~255位之间',
@@ -47,5 +51,9 @@ class PurchasesRequest extends FormRequest
             'texture.required'      => '产品材质必填',
             'image.required'      => '产品图片必填',
         ];
+        if(request()->method == 'PATCH'){
+            unset($msg['image.required']);
+        }
+        return $msg;
     }
 }

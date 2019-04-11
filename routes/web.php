@@ -42,6 +42,9 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function (){
         Route::get('purchases/status/{status}/{id}','PurchasesController@status')->name('purchases.status');
         Route::get('purchases/delete/{id}','PurchasesController@delete')->name('purchases.delete');
         Route::get('purchases/edit/{id}','PurchasesController@edit')->name('purchases.edit');
+        Route::any('purchases/import','PurchasesController@import')->name('purchases.import');
+        Route::any('purchases/upload','PurchasesController@upload')->name('purchases.upload');
+        Route::any('purchases/show','PurchasesController@show')->name('purchases.show');
         Route::resource('categorys','CategorysController', ['only' => ['index','create', 'store', 'update', 'edit','destroy']]);  //无限极分类列表
     });
 });
@@ -49,3 +52,24 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function (){
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::any('/rcreate', 'RegisterController@create')->name('RegisterCreate');
+
+Route::any('/wechat', 'WeChatController@serve');
+
+Route::group(['middleware' => ['web', 'moni.auth']], function () { //wechat.oauth 正式调用wechat.oauth:snsapi_base基本信息 wechat.oauth:snsapi_userinfo用户详细信息
+    Route::get('/user', function () {
+       // echo 1111;exit;
+        $user = session('wechat.oauth_user.default'); // 拿到授权用户资料
+
+        dd($user);
+    });
+
+});
+
+/*Route::group(['middleware' => 'mock.user'], function () {//这个中间件开发环境模拟一个用户授权页面
+    Route::middleware('wechat.oauth:snsapi_base')->group(function () {
+        Route::get('/login', 'SelfAuthController@autoLogin')->name('login');
+    });
+    Route::middleware('wechat.oauth:snsapi_userinfo')->group(function () {
+        Route::get('/register', 'SelfAuthController@autoRegister')->name('register');
+    });
+});*/

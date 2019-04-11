@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+        \App\Http\Middleware\MoniMiddleUser::class,
     ];
 
     /**
@@ -58,5 +59,8 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'rbac' => \App\Http\Middleware\RbacAuth::class,   //后台BBAC权限控制
+        'wechat.oauth' => \Overtrue\LaravelWeChat\Middleware\OAuthAuthenticate::class,
+        'mock.user' => \App\Http\Middleware\mockuser::class,
+        'moni.auth' => \App\Http\Middleware\MoniMiddleUser::class,
     ];
 }

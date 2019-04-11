@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Purchases extends Model
 {
     //
+    protected $fillable = ['name', 'category', 'size', 'thickness', 'texture', 'image', 'status','details','updated_at','created_at'];
+
     protected $table='purchases';
 
     public $timestamps = true;

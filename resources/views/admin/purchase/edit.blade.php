@@ -12,6 +12,7 @@
             <form class="form-horizontal m-t-md" action="{{ route('purchases.update',$purchase->id) }}" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
                 {!! csrf_field() !!}
                 {{method_field('PATCH')}}
+             {{--   <input type="hidden" name="id" value="{{$purchase->id}}"/>--}}
                 <div class="form-group">
                     <label class="col-sm-2 control-label">产品名称：</label>
                     <div class="input-group col-sm-2">

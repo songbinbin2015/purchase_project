@@ -14,6 +14,7 @@
 
                 <?php echo e(method_field('PATCH')); ?>
 
+             
                 <div class="form-group">
                     <label class="col-sm-2 control-label">产品名称：</label>
                     <div class="input-group col-sm-2">
