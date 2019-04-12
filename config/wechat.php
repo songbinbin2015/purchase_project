@@ -61,7 +61,7 @@ return [
         'default' => [
             'app_id' => env('WECHAT_OFFICIAL_ACCOUNT_APPID', 'wxadc04d30b09de6a3'),         // AppID
             'secret' => env('WECHAT_OFFICIAL_ACCOUNT_SECRET', '80b598ac021684e520c52fc95a44bc28'),    // AppSecret
-            'token' => env('WECHAT_OFFICIAL_ACCOUNT_TOKEN', 'f2fa7ce5853ef8d3a3469ffea78bc3ae'),           // Token
+            'token' => env('WECHAT_OFFICIAL_ACCOUNT_TOKEN', 'weixin'),           // Token
             'aes_key' => env('WECHAT_OFFICIAL_ACCOUNT_AES_KEY', ''),                 // EncodingAESKey
 
             /*
