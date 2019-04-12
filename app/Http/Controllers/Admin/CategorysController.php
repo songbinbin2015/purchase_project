@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\category;
+use App\Models\Category as category;
 use App\Http\Requests\admin\CategoryRequest;
 
 class CategorysController extends Controller

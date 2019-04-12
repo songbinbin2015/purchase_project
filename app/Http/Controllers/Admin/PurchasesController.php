@@ -4,8 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\purchases;
-use App\Models\category;
+use App\Models\Purchases as purchases;
+use App\Models\Category as category;
 use App\Http\Requests\Admin\PurchasesRequest;
 use App\Handlers\ImageUploadHandler;
 use Excel;

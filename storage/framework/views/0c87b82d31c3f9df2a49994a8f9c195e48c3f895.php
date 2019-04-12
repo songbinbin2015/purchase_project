@@ -46,7 +46,7 @@
                                     <a href="<?php echo e(route('purchases.status',['status'=>1,'id'=>$item['id']])); ?>"><button class="btn btn-warning btn-xs" type="button"><i class="fa fa-warning"></i> 恢复上架</button></a>
                                 <?php endif; ?>
                                 <a href="<?php echo e(route('purchases.delete',$item['id'])); ?>" onclick="return confirm('删除后无法找回,请确认?');"><button class="btn btn-danger btn-xs" type="button"><i class="fa fa-trash-o" ></i> 删除</button></a>
-                                <a href="<?php echo e(route('purchases.show',$item['id'])); ?>"><button class="btn btn-success" type="button"><i class="fa fa-trash-o" ></i>查看</button></a>
+                                <a href="<?php echo e(route('purchases.show',$item['id'])); ?>"><button class="btn btn-success btn-xs" type="button"><i class="fa fa-trash-o" ></i>查看</button></a>
                             </div>
                         </td>
                     </tr>
