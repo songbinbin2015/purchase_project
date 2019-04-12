@@ -58,7 +58,9 @@ Route::any('/wechat', 'WeChatController@serve');
 Route::group(['middleware' => ['web', 'wechat.oauth']], function () { //wechat.oauth 正式调用wechat.oauth:snsapi_base基本信息 wechat.oauth:snsapi_userinfo用户详细信息 moni.auth测试使用
     Route::get('/user', function () {
        // echo 1111;exit;
-        $user = session('wechat.oauth_user.default'); // 拿到授权用户资料
+        //$user = session('wechat.oauth_user.default'); // 拿到授权用户资料
+        app('session')->forget('wechat.oauth_user.default');
+        $user = session('wechat.oauth_user.default');
         dd($user);
     });
 });
