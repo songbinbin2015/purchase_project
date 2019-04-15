@@ -34,7 +34,7 @@ class WeChatController extends Controller
      */
     public function scoap(){
         $app = app($this->app);
-        $response = $app->oauth->scopes(['snsapi_userinfo'])->redirect();
+        $response = $app->oauth->scopes(['snsapi_userinfo'])->redirect('/getUser');
         return $response;
     }
 
